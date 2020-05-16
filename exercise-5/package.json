@@ -1,0 +1,14 @@
+{
+  "name": "bank",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node-dev --inspect --transpileOnly --ignore-watch node_modules src/index.ts"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.9.2"
+  }
+}
