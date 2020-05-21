@@ -22,7 +22,7 @@ class Transaction {
     value: number;
     to: Client;
     from: Client;
-  }) {
+  }): void {
     if (!this.validOutcomeTransaction({ client: from, value })) {
       console.log("invalid outcome");
       return;
