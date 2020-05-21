@@ -6,6 +6,11 @@ class Transaction {
   }
 
   public outcome({ client, value }: { client: Client; value: number }): void {
+    if (!this.validOutcomeTransaction({ client, value })) {
+      console.log("invalid outcome");
+      return;
+    }
+
     client.setBalance(client.getBalance() - value);
   }
 
@@ -18,7 +23,23 @@ class Transaction {
     to: Client;
     from: Client;
   }) {
-    // TODO
+    if (!this.validOutcomeTransaction({ client: from, value })) {
+      console.log("invalid outcome");
+      return;
+    }
+
+    this.outcome({ client: from, value });
+    this.income({ client: to, value });
+  }
+
+  private validOutcomeTransaction({
+    client,
+    value,
+  }: {
+    client: Client;
+    value: number;
+  }): boolean {
+    return client.getBalance() >= value ? true : false;
   }
 }
 

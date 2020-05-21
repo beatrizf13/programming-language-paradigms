@@ -16,7 +16,7 @@ class Client {
   }
 
   public getBalance(): number {
-    // TODO
+    return this.balance;
   }
 }
 
